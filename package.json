@@ -1,0 +1,22 @@
+{
+  "name": "tdd_project",
+  "version": "1.0.0",
+  "description": "test-driven development project for kata string calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SutharUtsav/TDD_String_Calculator.git"
+  },
+  "author": "Mr. Utsav Suthar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SutharUtsav/TDD_String_Calculator/issues"
+  },
+  "homepage": "https://github.com/SutharUtsav/TDD_String_Calculator#readme",
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
