@@ -31,4 +31,11 @@ describe('Test',()=>{
         assert.strictEqual(this.calculator.calculate('1,2,4'),7);
     })
 
+    it('Calculate simple string with "\\n" delimiter ', () => {
+        assert.strictEqual(this.calculator.calculate('1\n2'), 3);
+    });
+
+    it('Calculate simple string with "\\n" delimiter ', () => {
+        assert.strictEqual(this.calculator.calculate('5\n6\n7'), 18);
+    });
 })

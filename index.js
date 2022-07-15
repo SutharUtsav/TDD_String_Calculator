@@ -9,6 +9,9 @@ module.exports = class StringCalculator{
             return (parseInt(numberString));
         }
         else{
+            if(numberString.includes("\n")){
+                numberString = numberString.replace(/\n/g,',')
+            }
             var res = numberString.split(',');
             var total=0;
 
