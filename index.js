@@ -13,10 +13,16 @@ module.exports = class StringCalculator{
             var total=0;
 
             for( var i=0;i<res.length;i++){
+                this.validateNumber(res[i]);
                 total+= parseInt(res[i]);
             }
             return total;
         }
+    }
 
+    validateNumber(str){
+        if(parseInt(str)<0){
+            throw Error('Negative numbers not allowed!');
+        }
     }
 };
