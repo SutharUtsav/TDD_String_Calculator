@@ -1,7 +1,7 @@
 module.exports = class StringCalculator{
     constructor(){}
 
-    calculate(numberString){
+    calculate(numberString,delimiter=','){
         if(numberString == ''){
             return 0;
         }
@@ -9,10 +9,7 @@ module.exports = class StringCalculator{
             return (parseInt(numberString));
         }
         else{
-            if(numberString.includes("\n")){
-                numberString = numberString.replace(/\n/g,',')
-            }
-            var res = numberString.split(',');
+            var res = numberString.split(delimiter);
             var total=0;
 
             for( var i=0;i<res.length;i++){
