@@ -45,11 +45,16 @@ describe('Test',()=>{
 
     it('String with negative numbers return exceptions', () => {
         const exr = () => this.calculator.calculate('-1;2;3', ';');
-        expect(exr).toThrow("Negative numbers not allowed!")
+        expect(exr).toThrow("Negative numbers -1 not allowed!")
     });
 
     it('String with 2 negatives numbers return exceptions', () => {
         const exr = () => this.calculator.calculate('-3,-2,7');
-        expect(exr).toThrow("Negative numbers not allowed!")
+        expect(exr).toThrow("Negative numbers -3 -2 not allowed!")
     });
+
+    // it('Calculate string with range condition', () => {
+    //     assert.strictEqual(this.calculator.calculate('1,1000,1010'), 1001);
+    // });
+
 })
