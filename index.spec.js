@@ -53,8 +53,8 @@ describe('Test',()=>{
         expect(exr).toThrow("Negative numbers -3 -2 not allowed!")
     });
 
-    // it('Calculate string with range condition', () => {
-    //     assert.strictEqual(this.calculator.calculate('1,1000,1010'), 1001);
-    // });
+    it('Calculate string with range condition', () => {
+        assert.strictEqual(this.calculator.calculate('1,1000,1010'), 1001);
+    });
 
 })

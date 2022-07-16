@@ -14,7 +14,9 @@ module.exports = class StringCalculator{
 
             if(this.validateNumber(res)){
                 for( var i=0;i<res.length;i++){
-                    total+= parseInt(res[i]);
+                    if(parseInt(res[i])<=1000){
+                        total+= parseInt(res[i]);
+                    }
                 }
             }
             return total;
