@@ -9,7 +9,28 @@ module.exports = class StringCalculator{
             return (parseInt(numberString));
         }
         else{
+
+            //find delimiter
+            // index of // is 0 and delimiter is between // and \n 
+            if(numberString.includes("//")){
+                var ind = numberString.indexOf("\n");
+                var delimiter = numberString.substring(2,ind);
+
+                if(delimiter.includes("[") && delimiter.includes("]")){
+                    delimiter = delimiter.substring(1,delimiter.length-1);
+                }
+                numberString = numberString.substring(ind+1); 
+            }
+            else{
+                delimiter=",";
+                if(numberString.includes("\n")){
+                    numberString = numberString.replace(/\n/g,',');
+                }
+            }
+
+            
             var res = numberString.split(delimiter);
+            
             var total=0;
 
             if(this.validateNumber(res)){

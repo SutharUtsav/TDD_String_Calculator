@@ -32,7 +32,7 @@ describe('Test',()=>{
     })
 
     it('Calculate simple string with "\\n" delimiter ', () => {
-        assert.strictEqual(this.calculator.calculate('1\n2','\n'), 3);
+        assert.strictEqual(this.calculator.calculate('1\n2'), 3);
     });
 
     it('Calculate simple string with "\\n" delimiter ', () => {
@@ -40,11 +40,11 @@ describe('Test',()=>{
     });
 
     it('Calculate simple string with ";" delimiter ', () => {
-        assert.strictEqual(this.calculator.calculate('1;2', ';'), 3);
+        assert.strictEqual(this.calculator.calculate('//;\n1;2'), 3);
     });
 
     it('String with negative numbers return exceptions', () => {
-        const exr = () => this.calculator.calculate('-1;2;3', ';');
+        const exr = () => this.calculator.calculate('//;\n-1;2;3', ';');
         expect(exr).toThrow("Negative numbers -1 not allowed!")
     });
 
@@ -55,6 +55,10 @@ describe('Test',()=>{
 
     it('Calculate string with range condition', () => {
         assert.strictEqual(this.calculator.calculate('1,1000,1010'), 1001);
+    });
+
+    it('Calculate with any length delimiter', () => {
+        assert.strictEqual(this.calculator.calculate('//[***]\n1***1000***1010'), 1001);
     });
 
 })
